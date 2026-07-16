@@ -25,4 +25,13 @@ class HubColors {
   static const paperInk = Color(0xFF1C2A22);
   static const paperInkDim = Color(0xFF6C7A70);
   static const paperLine = Color(0xFFE3DDD0);
+
+  /// Dark emerald left rail on the light parent face.
+  static const railDark = Color(0xFF0C1D14);
+
+  // Per-person accent palette (agenda borders, family avatars) — stub.
+  static const personBlue = Color(0xFF3B82C4);
+  static const personRose = Color(0xFFC85C7E);
+  static const personAmber = Color(0xFFC98A2E);
+  static const personTeal = Color(0xFF2E8B8B);
 }

@@ -5,6 +5,7 @@ import '../../features/child_face/child_face_screen.dart';
 import '../../features/parent_face/parent_face_screen.dart';
 import '../../features/screensaver/screensaver_screen.dart';
 import '../../features/setup/setup_screen.dart';
+import '../../features/soon/soon_screen.dart';
 import '../device/device_mode.dart';
 import '../device/hub_face_store.dart';
 
@@ -36,6 +37,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           };
         },
       ),
+      GoRoute(
+          path: '/cal',
+          builder: (_, _) => const SoonScreen(title: 'Календарь')),
+      GoRoute(
+          path: '/map', builder: (_, _) => const SoonScreen(title: 'Карта')),
       GoRoute(path: '/idle', builder: (_, _) => const ScreensaverScreen()),
     ],
   );

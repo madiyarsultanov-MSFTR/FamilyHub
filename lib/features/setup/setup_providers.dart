@@ -6,7 +6,7 @@ import '../../core/models/child_profile.dart';
 /// reads (CONTRACT §3 — no live query yet). Hardcoded for now.
 final stubChildrenProvider = Provider<List<ChildProfile>>((_) {
   return const [
-    ChildProfile(id: 'togzhan', name: 'Тогжан', age: 9),
-    ChildProfile(id: 'raiymbek', name: 'Райымбек', age: 6),
+    ChildProfile(id: 'togzhan', name: 'Тогжан', age: 14),
+    ChildProfile(id: 'raiymbek', name: 'Райымбек', age: 9),
   ];
 });
