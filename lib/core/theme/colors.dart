@@ -17,4 +17,12 @@ class HubColors {
 
   static const ink = Color(0xFFF1F7F3);
   static const inkDim = Color(0xFF9CB7A8);
+
+  // Setup surface only — light "warm paper" per the v2 mock (emerald accent
+  // reused above). The ambient faces stay dark; this is the one-time setup look.
+  static const paper = Color(0xFFF3EFE6);
+  static const paperCard = Color(0xFFFBF9F4);
+  static const paperInk = Color(0xFF1C2A22);
+  static const paperInkDim = Color(0xFF6C7A70);
+  static const paperLine = Color(0xFFE3DDD0);
 }
