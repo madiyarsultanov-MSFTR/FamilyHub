@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'app.dart';
 import 'core/config/env.dart';
-import 'core/device/device_mode.dart';
+import 'core/device/hub_face_store.dart';
 
 /// Entry point. FamilyHub is the hub build: landscape-locked, always-on, and a
 /// read-mostly Supabase client (anon + RLS) initialized only when configured.
@@ -35,10 +36,12 @@ Future<void> main() async {
     );
   }
 
+  // Device-local face choice lives in SharedPreferences (never Supabase).
+  final prefs = await SharedPreferences.getInstance();
+
   runApp(
     ProviderScope(
-      // Fix the device mode to hub at the single entry point.
-      overrides: [deviceModeProvider.overrideWithValue(DeviceMode.hub)],
+      overrides: [sharedPreferencesProvider.overrideWithValue(prefs)],
       child: const FamilyHubApp(),
     ),
   );
