@@ -50,4 +50,19 @@ void main() {
     expect(find.text('Сегодня'), findsOneWidget);
     expect(find.text('Дети'), findsOneWidget);
   });
+
+  testWidgets('stored child face → greeting for that child', (tester) async {
+    useTabletSurface(tester);
+    SharedPreferences.setMockInitialValues({'hub_face': 'child:togzhan'});
+    final prefs = await SharedPreferences.getInstance();
+
+    await tester.pumpWidget(ProviderScope(
+      overrides: [sharedPreferencesProvider.overrideWithValue(prefs)],
+      child: const FamilyHubApp(),
+    ));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(SetupScreen), findsNothing);
+    expect(find.textContaining('Привет, Тогжан'), findsOneWidget);
+  });
 }

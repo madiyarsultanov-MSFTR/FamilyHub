@@ -29,6 +29,11 @@ class HubColors {
   /// Dark emerald left rail on the light parent face.
   static const railDark = Color(0xFF0C1D14);
 
+  // Child faces — warm, but kept in the emerald family (per mock), not peach.
+  static const kidBg = Color(0xFFEAF4EC); // KID (younger) — warmer
+  static const jeoBg = Color(0xFFEEF1EC); // Jeo (teen) — cleaner
+  static const childCard = Color(0xFFF8FBF8); // solid light card on child faces
+
   // Per-person accent palette (agenda borders, family avatars) — stub.
   static const personBlue = Color(0xFF3B82C4);
   static const personRose = Color(0xFFC85C7E);
